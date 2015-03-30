@@ -1,0 +1,3 @@
+EXP SYSTEM/accad@accad FILE=D:\bkporacle\FULL_ACCAD.DMP FULL=Y CONSISTENT=Y
+log=D:\bkporacle\EXP20130823ACCAD_FULL.log
+exit

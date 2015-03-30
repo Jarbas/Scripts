@@ -1,0 +1,29 @@
+DECLARE 
+
+Y NUMBER := 1;
+BEGIN
+FOR Y IN 1..115 LOOP
+
+
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 1, 1);
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 23, 17);
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 26, 17);
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 1, 17);
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 23, 18);
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 26, 18);
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 23, 1);
+Insert into MODELOS_TAREFAS   (COD_MODELO, COD_TAREFA, COD_COMPONENTE) Values   (Y, 26, 1);
+
+
+END LOOP;
+END;
+
+
+DECLARE
+  i NUMBER := 5;
+BEGIN
+  FOR i IN 1..3 LOOP  -- assign the values 1,2,3 to i
+    DBMS_OUTPUT.PUT_LINE( 'local: ' || TO_CHAR(i) 
+                       || ' global: ' || TO_CHAR(main.i));
+  END LOOP;
+END main;

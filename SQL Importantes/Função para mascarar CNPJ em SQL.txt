@@ -1,0 +1,1 @@
+Decode(CNPJ_CPF,NULL,NULL,REPLACE(REPLACE(REPLACE(To_Char(LPad(REPLACE(CNPJ_CPF,''),14 ,'0'),'00,000,000,0000,00'),',','.'),' ') ,'.'||Trim(To_Char(Trunc(Mod(LPad(CNPJ_CPF,14,'0'),1000000)/100),'0000'))||'.' ,'/'||Trim(To_Char(Trunc(Mod(LPad(CNPJ_CPF,14,'0'),1000000)/100) ,'0000'))||'-')) AS CNPJ_CPF,

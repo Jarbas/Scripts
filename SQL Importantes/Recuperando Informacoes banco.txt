@@ -1,0 +1,4 @@
+ SELECT object_name as recycle_name, original_name, type 
+     FROM recyclebin;
+     
+     FLASHBACK TABLE "BIN$/4s+fXhbSeKiH8slJeNdUw==$0" TO BEFORE DROP;

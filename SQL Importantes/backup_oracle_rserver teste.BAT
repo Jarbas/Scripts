@@ -1,0 +1,2 @@
+imp system/########## FILE=D:\bkporacle\FULL_SCR_20130717_12.DMP FROMUSER=ACCAD TOUSER=DESENVOLVIMENTO_T1 log=D:\bkporacle\imp20130718ACCAD.log IGNORE=y 
+exit

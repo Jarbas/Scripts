@@ -1,0 +1,44 @@
+SELECT AC.CONSTRAINT_NAME, AC.CONSTRAINT_TYPE, AC.TABLE_NAME, ACC.COLUMN_NAME 
+        FROM ALL_CONSTRAINTS AC JOIN ALL_CONS_COLUMNS ACC ON AC.CONSTRAINT_NAME = ACC.CONSTRAINT_NAME 
+        WHERE AC.CONSTRAINT_TYPE  = 'P' AND AC.OWNER = :SCHEMA  AND UPPER(AC.TABLE_NAME) = UPPER(:TABELA) AND 
+        UPPER(ACC.COLUMN_NAME) = UPPER(:FIELD) ;
+		
+		
+		
+		  AInfoDocumentoFiscal := InfoDocumentoFiscalBuscar(DataModuleLctoFiscalEnt.SdsReferenciaEntradaCOD_ENTRADA_REF.AsInteger, tlEntrada);
+  if (AInfoDocumentoFiscal.Codigo <> EmptyStr) then
+  
+    var AInfoDocumentoFiscal: TInfoDocumentoFiscal;
+  
+  
+  begin
+   // DBGridTitulosRengociacao.DataSource := DsRenegociacaoTitPagar;
+    LabelEntradaCliente.Caption       := AInfoDocumentoFiscal.CodEntidade + ' - ' + AInfoDocumentoFiscal.RazaoSocial;
+    LabelEntradaSerie.Caption         := AInfoDocumentoFiscal.Serie;
+    LabelEntradaDocumento.Caption     := AInfoDocumentoFiscal.NumeroNf;
+    LabelEntradaDataEntrada.Caption   := AInfoDocumentoFiscal.DataHora;
+    LabelEntradaValorContabil.Caption := AInfoDocumentoFiscal.ValorTotal;
+
+    // --- TabSheet Renegociação
+
+    LabelCodigoNfRefencia.Caption :=  AInfoDocumentoFiscal.NumeroNf;
+    LabelCliente.Caption          := AInfoDocumentoFiscal.CodEntidade + ' - ' + AInfoDocumentoFiscal.RazaoSocial;
+    LabelData.Caption             :=  AInfoDocumentoFiscal.DataHora;
+
+  end
+  else
+  begin
+    LabelEntradaCliente.Caption       := EmptyStr;
+    LabelEntradaSerie.Caption         := EmptyStr;
+    LabelEntradaDocumento.Caption     := EmptyStr;
+    LabelEntradaDataEntrada.Caption   := EmptyStr;
+    LabelEntradaValorContabil.Caption := EmptyStr;
+
+    LabelCodigoNfRefencia.Caption     := EmptyStr;
+    LabelCliente.Caption              := EmptyStr;
+    LabelData.Caption                 := EmptyStr;
+
+
+  end;
+  AInfoDocumentoFiscal.Free;
+end;

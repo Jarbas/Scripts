@@ -1,0 +1,11 @@
+SELECT   ac.constraint_name
+     ,   acc.column_name
+     ,   acc.position
+     ,   ac.search_condition
+     ,   ac.r_constraint_name
+     ,   ac.constraint_type
+     ,   ac.owner,
+     AC.TABLE_NAME
+FROM     all_cons_columns acc
+     ,   all_constraints  ac
+     where AC.CONSTRAINT_NAME = 'FK_OS_SETOR' 

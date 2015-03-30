@@ -1,0 +1,1 @@
+imp system/######### FILE=D:\bkporacle\FULL_SCR_20130716_12.DMP FROMUSER=RAFITEC TOUSER=DESENVOLVIMENTO_T1 log=D:\bkporacle\imp20130716.log IGNORE=y 
